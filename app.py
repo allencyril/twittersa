@@ -1,4 +1,3 @@
-heroku config:set NLTK_DATA='/app/nltk_data'
 import streamlit as st
 hide_streamlit_style = """
             <style>
