@@ -6,7 +6,7 @@ streamlit==0.81.1
 textblob==0.15.3
 tweepy==3.10.0
 wordcloud==1.8.1
-python
+
 python-dateutil==2.8.1                     
 python-jsonrpc-server==0.4.0                      
 python-language-server==0.35.1                     
