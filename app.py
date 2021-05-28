@@ -93,6 +93,7 @@ def app():
                 def Plot_Analysis():
 
                     st.success("Generating Visualisation for Sentiment Analysis")
+		    st.set_option('deprecation.showPyplotGlobalUse', False)
 
                     posts = api.user_timeline(screen_name=raw_text, count=100, lang="en", tweet_mode="extended")
 
@@ -130,7 +131,6 @@ def app():
                             return 'Positive'
 
                     df['Analysis'] = df['Polarity'].apply(getAnalysis)
-			st.set_option('deprecation.showPyplotGlobalUse', False)
 
                     return df
 
