@@ -91,9 +91,11 @@ def app():
             else:
 
                 def Plot_Analysis():
+			 fig, ax = plt.subplots()
+			ax.scatter([1, 2, 3], [1, 2, 3])
 
                     st.success("Generating Visualisation for Sentiment Analysis")
-		    st.set_option('deprecation.showPyplotGlobalUse', False)
+		    
 
                     posts = api.user_timeline(screen_name=raw_text, count=100, lang="en", tweet_mode="extended")
 
@@ -139,6 +141,7 @@ def app():
                 st.write(sns.countplot(x=df["Analysis"], data=df))
 
                 st.pyplot(use_container_width=True)
+		st.pyplot(fig)
 		
 
 if __name__ == "__main__":
