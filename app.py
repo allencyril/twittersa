@@ -138,6 +138,8 @@ def app():
                 st.write(sns.countplot(x=df["Analysis"], data=df))
 
                 st.pyplot(use_container_width=True)
+		
+		st.set_option('deprecation.showPyplotGlobalUse', False)
 
 if __name__ == "__main__":
     app()
