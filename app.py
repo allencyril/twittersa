@@ -130,6 +130,7 @@ def app():
                             return 'Positive'
 
                     df['Analysis'] = df['Polarity'].apply(getAnalysis)
+			st.set_option('deprecation.showPyplotGlobalUse', False)
 
                     return df
 
@@ -139,7 +140,6 @@ def app():
 
                 st.pyplot(use_container_width=True)
 		
-		st.set_option('deprecation.showPyplotGlobalUse', False)
 
 if __name__ == "__main__":
     app()
