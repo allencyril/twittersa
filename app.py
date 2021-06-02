@@ -120,8 +120,7 @@ def app():
                     def getAnalysis(score):
                         if score < 0:
                             return 'Negative'
-                        elif score == 0:
-                            return 'Neutral'
+                        
                         else:
                             return 'Positive'
 
@@ -162,27 +161,26 @@ def app():
             # Clean the tweets
             df['Tweets'] = df['Tweets'].apply(cleanTxt)
 
-            
+
             # Create a function to get the polarity
             def getPolarity(text):
                 return TextBlob(text).sentiment.polarity
 
-            # Create two new columns 'Subjectivity' & 'Polarity'
-          
-            df['Polarity'] = df['Tweets'].apply(getPolarity)
+            
+            
+            df2= df['Tweets'].apply(getPolarity)
+            
 
             def getAnalysis(score):
                 if score < 0:
                     return 'Negative'
 
-                elif score == 0:
-                    return 'Neutral'
-
-
+                
                 else:
                     return 'Positive'
+             
 
-            df['Analysis'] = df['Polarity'].apply(getAnalysis)
+            df['Analysis'] = df2.apply(getAnalysis)
             return df
 
         if st.button("Show Data"):
